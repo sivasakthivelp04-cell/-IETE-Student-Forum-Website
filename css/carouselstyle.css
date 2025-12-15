@@ -1,0 +1,27 @@
+ body {
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 21px;
+  font-size: 13px;
+    color: #6a737b;
+  overflow-x: hidden;
+}
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.divider:before,
+.divider:after {
+  content: "_____________________";
+  color: #e6e8ea;
+  position: relative;
+  bottom: 6px;
+}
+
+[class*="col-"] {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+}  

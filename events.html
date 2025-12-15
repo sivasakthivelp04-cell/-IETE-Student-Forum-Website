@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Events | IETE Bits</title>
+    <meta name="description" content="Official page of IETE Students' Forum BIT Sindri, One of the best technical clubs of BIT Sindri and known for organising the Technical mega event of BIT Sindri Tech Udbhav">
+    <meta name="author" content="Abhishek Ranjan">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.2%;
+            height: 60px;
+            color: #222;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2em;
+            border-radius: 8px;
+            margin: 1rem;
+            margin-left: .9%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-family: "metropolis-regular", sans-serif;
+            /* font-size: 1.6rem; */
+        }
+        
+        .top-navbar .top-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-navbar .top-logo img {
+            height: 40px;
+        }
+        
+        .top-navbar .top-logo .text-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 2rem;
+        }
+        
+        .top-navbar .top-links ul {
+            display: flex;
+            position: relative;
+        }
+        
+        .top-navbar .top-links ul li {
+            /* position: relative; */
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .top-navbar .top-links ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .top-navbar .top-links ul li a .icon {
+            display: block;
+            line-height: 90px;
+            font-size: 2rem;
+            text-align: center;
+            transition: .5s;
+            color: rgb(19, 5, 93);
+            transform: translateY(0px);
+        }
+        
+        .top-navbar .top-links ul li.active a .icon,
+        .top-navbar .top-links ul li:hover a .icon {
+            transform: translateY(30px);
+            color: #fff;
+        }
+        
+        .top-navbar .top-links ul li a .text {
+            position: absolute;
+            top: 20px;
+            transition: .5s;
+            opacity: 0;
+            color: rgb(19, 5, 93);
+            font-size: .85em;
+            font-weight: bold;
+        }
+        
+        .top-navbar .top-links ul li.active a .text,
+        .top-navbar .top-links ul li:hover a .text {
+            opacity: 1;
+        }
+        
+        .top-navbar .top-links ul .indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(19, 5, 93);
+            top: 80%;
+            left: 240px;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-links ul li:nth-child(1):hover~.indicator {
+            transform: translateX(calc(60px * -4));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(2):hover~.indicator {
+            transform: translateX(calc(60px * -3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(3):hover~.indicator {
+            transform: translateX(calc(60px * -2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(4):hover~.indicator {
+            transform: translateX(calc(60px * -1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(5):hover~.indicator {
+            transform: translateX(calc(60px * 0));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(6):hover~.indicator {
+            transform: translateX(calc(60px * 1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(7):hover~.indicator {
+            transform: translateX(calc(60px * 2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(8):hover~.indicator {
+            transform: translateX(calc(60px * 3));
+        }
+        
+        .top-navbar .top-bar {
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .top-navbar {
+                box-shadow: none;
+                z-index: 1001;
+            }
+            .top-navbar.radius {
+                border-radius: 8px 8px 0px 0px;
+            }
+            .top-navbar .top-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-radius: 0px 0px 8px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: none;
+                transition: .5s;
+            }
+            .top-navbar .top-links ul {
+                flex-direction: column;
+            }
+            .top-navbar .top-links ul li {
+                height: 50px;
+            }
+            .top-navbar .top-links ul .indicator {
+                display: none;
+            }
+            .top-navbar .top-links ul li a {
+                flex-direction: row;
+            }
+            .top-navbar .top-links ul li a .icon {
+                line-height: 50px;
+                display: inline;
+                transform: translateY(0px);
+            }
+            .top-navbar .top-links ul li a .text {
+                transform: translateY(-8px);
+                left: 70px;
+                opacity: 1;
+            }
+            .top-navbar .top-links ul li.active a .icon,
+            .top-navbar .top-links ul li:hover a .icon {
+                transform: translateY(5px);
+                color: rgb(19, 5, 93);
+            }
+            .top-navbar .top-bar {
+                display: initial;
+            }
+            .top-navbar .top-links.show {
+                display: initial;
+            }
+        }
+    </style>
+    <style>
+        @media (max-width:570px) {
+            #home {
+                background-color: black;
+            }
+        }
+    </style>
+    <style>
+        .new-box {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        
+        .new-card {
+            position: relative;
+            width: 380px;
+            height: 320px;
+            background: #2b2b2b;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 1rem;
+        }
+        
+        .new-card::before,
+        .new-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            background: #2b2b2b;
+            transition: .5s;
+            z-index: -1;
+        }
+        
+        .new-card:hover::before {
+            transform: rotate(20deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card:hover::after {
+            transform: rotate(10deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card .imgbox {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #222;
+            transition: .5s;
+            z-index: 1;
+        }
+        
+        .new-card .imgbox img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; */
+        }
+        
+        .new-card .detailbox {
+            position: absolute;
+            padding: 10px;
+            top: 45%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        
+        .new-card:hover .imgbox {
+            bottom: 310px;
+            transform: scale(1);
+        }
+        
+        .detailbox .h4 {
+            color: #a1a1a1;
+        }
+        
+        .detailbox p {
+            font-size: 15px;
+            color: white;
+        }
+        .home-social-title{
+          font-size: 30px;
+        }
+        .fab {
+            font-size: 30px;
+        }
+        .fab:hover{
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        .fa-facebook:hover {
+            color: #00acee;
+            text-decoration: none;
+        }
+        
+        .fa-twitter:hover {
+            color: #00acee;
+        }
+        
+        .fa-linkedin:hover {
+            color: #00acee;
+        }
+        
+        .fa-youtube:hover {
+            color: red;
+        }
+        
+        .fa-instagram:hover {
+            color: #bc2a8d;
+        }
+
+
+         /* Custom CSS for the outer box */
+         .outer-box {
+            background-color: #f3f3f3;
+            padding: 30px;
+            border: 1px solid blue;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 3rem;
+        }
+
+        /* Custom CSS for the instructions */
+        .instructions {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+        p{
+          font-style:oblique;
+          margin-top: 3rem;
+          margin-left: 3rem;
+        }
+
+    </style>
+
+
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="iete.ico" type="image/x-icon">
+    <link rel="icon" href="iete.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
+    <link rel="icon" href="iete.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="top-navbar" id="top-navbar">
+            <div class="top-logo">
+                <img src="./img/iete-logo.png" alt="">
+                <div class="text-logo">IETE</div>
+            </div>
+            <div class="top-links" id="top-links">
+                <ul>
+                    <li class="top-link">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="about.html">
+                            <span class="icon"><i class="fa-solid fa-info"></i></span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="members.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Members</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="events.html">
+                            <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="text">Events</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="contact.html">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+            <div class="top-bar" id="top-bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
+
+    </header>
+    <!-- end s-header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
+        <div class="hero-H">
+            <div class="allHAlign">
+                <div class="hero-W">
+                    <div class="hing">
+                        <h1>OUR EVENTS</h1>
+                    </div>
+                    <div class="hing">
+                        <h1 style="margin-top: 60px; font-size: 3rem;">WE WIN</h1>
+                    </div>
+                </div>
+                <div class="heroP" style="box-sizing: border-box; padding-left: 8vw;">
+                    <img src="images/heroP.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="shadow-overlay"></div>
+        <div id="particles-js" class="home-content" style="padding: 0;">
+            <div class="container"> -->
+        <!-- <div class="row home-content__main" style="padding: 0;"><h1 style="font-size: 6rem;position: absolute;text-align: center; padding-left: 180px; padding-top: 300px;" class="ml3">IETE Welcomes the batch of </h1>
+            <h1 style="font-size: 5rem;position: absolute;text-align: center; padding-left: 540px; padding-top: 370px;" class="ml3">2K21 </h1>
+            </div> -->
+        </div>
+        <!-- end home-content__main -->
+        </div>
+        <!-- end home-content -->
+        <!-- we are inducting
+    ================================================== -->
+
+        <!-- end we are inducting -->
+
+        <!-- end home-sidelinks -->
+
+        <ul class="home-social">
+            <li class="home-social-title">Follow Us</li>
+            <li>
+                <a href="https://www.facebook.com/IETECHENNAI/" class="fab fa-facebook"></a>
+
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/iete-newdelhi/?originalSubdomain=in" class="fab fa-linkedin"></a>
+            </li>
+            <li>
+                <a href="https://ieteerode.kongu.edu/" class="fab fa-twitter"></a>
+            </li>
+        </ul>
+        <!-- end home-social -->
+
+        <a href="#about" class="home-scroll smoothscroll">
+            <span class="home-scroll__text">Scroll Down</span>
+            <span class="home-scroll__icon"></span>
+        </a>
+        <!-- end home-scroll -->
+    </section>
+    <!-- services
+    ================================================== -->
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="outer-box" style="margin-left: 50px;">
+                    <p class="instructions">
+                        Webinar on IoT Security(WISE-2022)<br>
+                        on 30th May, 2022<br>
+                        SETS Chennai & C-DAC Hyderabad in collaboration with ISEA<br>
+                        All interested members are requested to register at the following link to participate in the webinar<br>
+                        <a href="https://infosecawareness.in/wise2022" class="btn btn-primary" target="_blank" style="border-radius: 10px; border : blue;">Visit Website</a><br>
+                        Participation certificate will be issued to all the registered participants after attending all the sessions.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="outer-box" style="margin-left: 50px;">
+                    <p class="instructions">
+                        <h3>IETE CHENCON 2022 - Call for Papers</h3>
+                        Hybrid Mode- MAY 20 & 21, 2022
+                       <h3>"International Conference on Power of Artificial Intelligence and Machine Learning for Human Empowerment"</h3>
+                        <a href="http://ietechennai.in/assets/pdf/CHENCON2022.pdf" class="btn btn-primary" target="_blank" style="border-radius: 10px; border : blue;">Pdf Brochure</a><span><a href="http://ietechennai.in/assets/pdf/chencon_invitation.pdf" class="btn btn-primary" target="_blank" style="border-radius: 10px; border : blue;">Inaugural Session Programme</a></span><span><a href="http://ietechennai.in/assets/pdf/chencon2022_proceedings.pdf" class="btn btn-primary" target="_blank" style="border-radius: 10px; border : blue;">ChenCon 2022 Proceedings</a></span><br>
+                        Participation certificate will be issued to all the registered participants after attending all the sessions.<br>
+                        --------------------------------------------------------------------
+                        <br>
+                        <img src="iimages/chencon2022.jpeg">
+                        --------------------------------------------------------------------
+                        <h4>Scope of the Conference</h4>
+                        Recently, the use of AI/ML technology has been exponentially increasing in our daily lives. AI/ML applications represent an important evolution in computer science and data processing that is quickly transforming a vast array of domains. IETE CHENCON 2022 provides vibrant opportunities for the delegates to exchange new ideas, applications, practical challenges encountered and to leverage AI and ML technologies. The technical program of the conference will consist of invited key note talks and paper presentations. IETE CHENCON 2022 accepts technical paper presentation from research scholars, faculty, students and industry professionals in emerging areas of AI and ML applications but not limited to:
+                        <br>
+                        <img src="iimages/chencon22.jpeg">
+                        <h4>Submission Guidelines</h4>
+                        Prospective authors are invited to submit full papers describing original, previously unpublished, complete work in four pages in A4 IEEE double column conference template, including figure, results and references. Submitted papers will be reviewed by two to three technical committee or reviewers. Accepted and registered papers of IETE CHENCON 2022 will be published in the conference proceedings. Extended versions of the accepted and presented papers will be recommended for publication in IETE Journals, SCOPUS, SCI and other indexed journals. Authors must submit the papers through their Easy chair account using the following link: https://easychair.org/conferences/?conf=ietechencon2022 or submit the papers to the Email ID: chencon2022@gmail.com
+                        <br>
+                        <h4>Selected and presented papers will be published in the Journal of Science and Technology (ISSN 2456–5660)</h4>
+                            <!-- Table Column -->
+                    <div class="table-responsive mt-4">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Registration Fee & Details</th>
+                                    <th>Important Dates</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>At least one author for each paper <br>
+                                        should register for the conference.<br>
+                                        If an author has more than one accepted paper,
+                                        registration<br>
+                                        fee has to be paid for each Paper ID.</td>
+                                    <td>Last date for paper Submission : 06.05.2022<br>
+                                        Notification of Acceptance : 10.05.2022<br>
+                                        Registration on or before : 15.05.2022<br>
+                                        Conference Date : 20.05.2022 & 21.05.2022</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        IETE members including ISF : Rs. 1500 + GST<br>
+                                        NON IETE participants : Rs. 2000 + GST<br>
+                                        International Participants : $50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="table-responsive mt-4">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td><h4>Patron</h4>
+                                            Prof Wg Cdr P. Prabhakar
+                                            <h4>Organizing Chair</h4>
+                                            Dr. N. Venkateswaran
+                                            <h4>Conference Co-Chairs</h4>
+                                            Mrs. T.J. Jeyaprabha<br>
+                                            Mr. Arun<br><br>
+                                            Mobile: 72000 96048<br>
+                                            Phone: 044-28350773<br>
+                                            Email: chencon2021@gmail.com<br>
+                                            Website: http://ietechennai.in
+                                        <td>
+                                            <h4>Advisory Committee</h4>
+                                            Dr. J.W. Bakal
+                                            Dr. K.T.V Reddy<br>
+                                            Dr. Surendra Pal<br>
+                                            Prof. K.K. Aggarwal<br>
+                                            Dr. M.H. Kori<br>
+                                            Dr. Shiv Kumar<br>
+                                            Dr. K. Jaya Shankar<br>
+                                            Col. (Retd) K.S. Chakravarthi<br>
+                                            Shri. S. Ramaswamy<br>
+                                            Dr. Swarna Ravindra Babu<br>
+                                            Dr. Tata Sudhakar
+                                           </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <section id="works" class="s-works">
+                            <div class="row section-header" data-aos="fade-up">
+                                <div class="col-full">
+                                    <h3 class="subhead">Latest Events</h3>
+                                    <h1 class="display-1"></h1>
+                                </div>
+                            </div>
+                            <!-- end section-header -->
+                            <!--  -->
+                            <div class="eve-list" data-aos="fade-up">
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/resume.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "Professional resume writing"</h3>
+                                            <p>17th October 2020 (Saturday)
+                                                Mr.M.Vigneshwaran (Softskill Trainer/ e-learning developer) gave a guidance session on RESUME building in a Professional manner
+                                            </p>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/cs.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "EVOLUTION OF COMPUTING AND SKILL SETS FOR THE FUTURE"</h3>
+                                            <p>17/10/2020
+                    
+                                                Mr.MallikMahalingam (CEO,Springpath (CISCO)) commenced with the evolution of hardware and operating software<br>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/error.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "5G AND IT’S HISTORYs"</h3>
+                                            <p>20/09/2020
+                    
+                                                Mr.SunderPalaniraj (Director IC-design, TDKInvenSense) gave a technical talk on communication networks</p>
+                    
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/5g.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Worksop on API 101</h3>
+                                            <p>20/09/2020
+                    
+                                                Mr.SunderPalaniraj (Director IC-design, TDKInvenSense) gave a technical talk on communication networks</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/covid.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Quiz "ON COVID 19 AND AI SOLUTIONS"</h3>
+                                            <p>05/09/20
+
+                                                Quiz on ‘COVID19 and AI Solutions”. The event started with the note on ‘Revering of knowledge</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/ocean.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "OCEAN TECHNOLOGY IN NIOT"</h3>
+                                            <p>29/08/20
+
+                                                Mr.TATA SUDHAKAR (former IETE Che Chairman) explained about the role of Ocean Technology for society, Coastal Protection</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/talk.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "A REALISTIC APPROACH TOWARDS DATA SCIENCE"</h3>
+                                            <p>23/08/20
+
+                                                Mr.Sivasubramanian (Business Intelligence & Data Analyst)covered various topics on data science like the sectors</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="eve">
+                                    <div class="new-card" data-aos="fade-up">
+                                        <div class="imgbox">
+                                            <img src="iimages/matlab.jpeg" class="tech-udbhav-events-img">
+                                        </div>
+                                        <div class="detailbox">
+                                            <h3 class="h4">Webinar on "MATLAB PROGRAMMING TECHNIQUES"</h3>
+                                            <p>22/08/20
+
+                                                DR.Markkandan (Asst. Professor, Anand Institute of Higher Technology) talked about MATLAB Fundamentals, Applications, Sample Matlab</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            </div>
+                            <!--  -->
+                        </section>
+
+                                </div>
+                                <!-- end contact-secondary -->
+                            </div>
+                            <!-- end row -->
+                    
+                            <div class="row">
+                                <div class="col-full cl-copyright">
+                                    <span>
+                                Copyright &copy;
+                                <script>
+                                  document.write(new Date().getFullYear());
+                                </script>
+                                All rights reserved | IETE Students' Forum KONGU COLLEGE</span
+                              >
+                              <span
+                                >Design and Developed by :
+                                <a href="https:/facebook.com/ranjan17abhishek">SIVA</a> &
+                                <a href="https://www.facebook.com/roshanrajput96300"
+                                  >SUDHARSAN</a> & <a href="#">SAMEER</a>
+                                </span
+                              >
+                            </div>
+                          </div>
+                    
+                          <div class="cl-go-top">
+                            <a class="smoothscroll" title="Back to Top" href="#top"
+                              ><i class="icon-arrow-up" aria-hidden="true"></i
+                            ></a>
+                          </div>
+
+
+                        </section>
+
+
+
+                    </div>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <!-- contact
+    ================================================== -->
+    <section id="contact" class="s-contact">
+
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead subhead--light">Contact Us</h3>
+                <a href="mailto:ietebits@gmail.com" class="contact-email">ietechennai@gmail.com</a>
+                <span class="contact-number">044 2835 0773</span><br><br>
+            </div>
+        </div>
+        <!-- end section-header -->
+
+        <div class="row">
+
+            <div class="col-five tab-full contact-secondary" data-aos="fade-up">
+                <h3 class="subhead subhead--light">Where To Find Us</h3>
+
+                <p class="contact-address">
+                    <br>IETE Chennai centre, 
+                    <br>No: 37,<br>Conran Smith Road Entrance Peters Road,</br> Gopalapuram,Chennai,<br>Tamil Nadu 600086</br>
+                </p>
+            </div>
+            
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-full cl-copyright">
+                <span>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | IETE Students' Forum KONGU COLLEGE</span
+          >
+          <span
+            >Design and Developed by :
+            <a href="https:/facebook.com/ranjan17abhishek">SIVA</a> &
+            <a href="https://www.facebook.com/roshanrajput96300"
+              >SUDHARSAN</a> & <a href="#">SAMEER</a>
+            </span
+          >
+        </div>
+      </div>
+
+        <div class="cl-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+        </div>
+
+    </section>
+    <!-- end s-contact -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+        <div id="loader">
+            <video autoplay loop>
+                    <source src="images/loader.mp4">
+                </video>
+        </div>
+    </div> -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        const topNav = document.getElementById('top-navbar');
+        const topLinks = document.getElementById('top-links');
+        const topBar = document.getElementById('top-bar');
+        topBar.addEventListener('click', () => {
+            topNav.classList.toggle('radius');
+            topLinks.classList.toggle('show');
+        })
+    </script>
+
+
+
+</body>
+
+</html>

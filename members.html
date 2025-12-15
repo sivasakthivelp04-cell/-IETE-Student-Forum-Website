@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>Members | IETE Bits</title>
+    <meta name="description" content="Official page of IETE Students' Chapter BIT Sindri, One of the best technical clubs of BIT Sindri and known for organising the Technical mega event of BIT Sindri Tech Udbhav" />
+    <meta name="author" content="Abhishek Ranjan" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="cardstyles.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/ihover.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="css/carouselstyle.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.2%;
+            height: 60px;
+            color: #222;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2em;
+            border-radius: 8px;
+            margin: 1rem;
+            margin-left: .9%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            font-family: "metropolis-regular", sans-serif;
+            font-size: 1.6rem;
+        }
+        
+        .top-navbar .top-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-navbar .top-logo img {
+            height: 40px;
+        }
+        
+        .top-navbar .top-logo .text-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-left: 2rem;
+        }
+        
+        .top-navbar .top-links ul {
+            display: flex;
+            position: relative;
+        }
+        
+        .top-navbar .top-links ul li {
+            /* position: relative; */
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .top-navbar .top-links ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .top-navbar .top-links ul li a .icon {
+            display: block;
+            line-height: 90px;
+            font-size: 2rem;
+            text-align: center;
+            transition: .5s;
+            color: rgb(19, 5, 93);
+            transform: translateY(-15px);
+        }
+        
+        .top-navbar .top-links ul li.active a .icon,
+        .top-navbar .top-links ul li:hover a .icon {
+            transform: translateY(15px);
+            color: #fff;
+        }
+        
+        .top-navbar .top-links ul li a .text {
+            position: absolute;
+            top: 10px;
+            transition: .5s;
+            opacity: 0;
+            color: rgb(19, 5, 93);
+            font-size: .85em;
+            font-weight: bold;
+        }
+        
+        .top-navbar .top-links ul li.active a .text,
+        .top-navbar .top-links ul li:hover a .text {
+            opacity: 1;
+        }
+        
+        .top-navbar .top-links ul .indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(19, 5, 93);
+            top: 50%;
+            left: 180px;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-links ul li:nth-child(1):hover~.indicator {
+            transform: translateX(calc(60px * -3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(2):hover~.indicator {
+            transform: translateX(calc(60px * -2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(3):hover~.indicator {
+            transform: translateX(calc(60px * -1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(4):hover~.indicator {
+            transform: translateX(calc(60px * 0));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(5):hover~.indicator {
+            transform: translateX(calc(60px * 1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(6):hover~.indicator {
+            transform: translateX(calc(60px * 2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(7):hover~.indicator {
+            transform: translateX(calc(60px * 3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(8):hover~.indicator {
+            transform: translateX(calc(60px * 4));
+        }
+        
+        .top-navbar .top-bar {
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        .home-social-title{
+          font-size: 30px;
+        }
+        .fab {
+            font-size: 30px;
+        }
+        .fab:hover{
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        .fa-facebook:hover {
+            color: #00acee;
+            text-decoration: none;
+        }
+        
+        .fa-twitter:hover {
+            color: #00acee;
+        }
+        
+        .fa-linkedin:hover {
+            color: #00acee;
+        }
+        
+        .fa-youtube:hover {
+            color: red;
+        }
+        
+        .fa-instagram:hover {
+            color: #bc2a8d;
+        }
+        @media (max-width: 700px) {
+            .top-navbar {
+                box-shadow: none;
+                z-index: 1001;
+            }
+            .top-navbar.radius {
+                border-radius: 8px 8px 0px 0px;
+            }
+            .top-navbar .top-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-radius: 0px 0px 8px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: none;
+                transition: .5s;
+            }
+            .top-navbar .top-links ul {
+                flex-direction: column;
+            }
+            .top-navbar .top-links ul li {
+                height: 50px;
+            }
+            .top-navbar .top-links ul .indicator {
+                display: none;
+            }
+            .top-navbar .top-links ul li a {
+                flex-direction: row;
+            }
+            .top-navbar .top-links ul li a .icon {
+                /* line-height: 10px; */
+                display: inline;
+                transform: translateY(-20px);
+            }
+            .top-navbar .top-links ul li a .text {
+                transform: translateY(-8px);
+                left: 70px;
+                opacity: 1;
+            }
+            .top-navbar .top-links ul li.active a .icon {
+                transform: translateY(-20px);
+                color: rgb(67, 93, 5);
+            }
+            .top-navbar .top-links ul li:hover a .icon {
+                transform: translateY(-10px);
+                color: rgb(19, 5, 93);
+            }
+            .top-navbar .top-bar {
+                display: initial;
+            }
+            .top-navbar .top-links.show {
+                display: initial;
+            }
+        }
+        
+        @media (max-width:570px) {
+            #home {
+                background-color: black;
+            }
+        }
+        .hing h5{
+            font-size: large;
+            color: wheat;
+            margin-top: 6rem;
+            font-size: x-large;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 2rem;
+            border: none;
+            outline: none;
+            color: darkblue;
+            background-color: inherit;
+            margin: 0;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 3;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        p{
+          font-style:oblique;
+          margin-top: 3rem;
+          margin-left: 3rem;
+        }
+    </style>
+
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <script type="text/javascript" src="swiper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
+    <link rel="icon" href="iete.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
+    <link rel="icon" href="iete.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+</head>
+<!-- efef-->
+
+<body id="top">
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="top-navbar" id="top-navbar">
+            <div class="top-logo">
+                <img src="./img/iete-logo.png" alt="">
+                <div class="text-logo">IETE</div>
+            </div>
+            <div class="top-links" id="top-links">
+                <ul>
+                    <li class="top-link">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="about.html">
+                            <span class="icon"><i class="fa-solid fa-info"></i></span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="members.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Members</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="events.html">
+                            <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="text">Events</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="contact.html">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+            <div class="top-bar" id="top-bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
+
+    </header>
+    <!-- end s-header -->
+
+    <!-- home -->
+
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
+        <div class="hero-H">
+            <div class="allHAlign">
+                <div class="hero-W">
+                    <div class="hing">
+                        <h1>MEMBERS</h1>
+                    </div>
+                    <div class="hing">
+                        <h1 style="margin-top: 60px; font-size: 3rem;">TEAM IETE</h1>
+                    </div>
+                </div>
+                <div class="heroP" style="box-sizing: border-box; padding-left: 10vw;">
+                    <img src="images/heroP.png" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class="shadow-overlay"></div>
+        <div id="particles-js" class="home-content" style="padding: 0;">
+            <div class="container"> -->
+        <!-- <div class="row home-content__main" style="padding: 0;"><h1 style="font-size: 6rem;position: absolute;text-align: center; padding-left: 180px; padding-top: 300px;" class="ml3">IETE Welcomes the batch of </h1>
+            <h1 style="font-size: 5rem;position: absolute;text-align: center; padding-left: 540px; padding-top: 370px;" class="ml3">2K21 </h1>
+            </div> -->
+        </div>
+        <!-- end home-content__main -->
+        </div>
+        <!-- end home-content -->
+        <!-- we are inducting
+    ================================================== -->
+
+        <!-- end we are inducting -->
+
+        <ul class="home-social">
+            <li class="home-social-title">Follow Us</li>
+            <li>
+                <a href="https://www.facebook.com/IETECHENNAI/" class="fab fa-facebook"></a>
+
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/iete-newdelhi/?originalSubdomain=in" class="fab fa-linkedin"></a>
+            </li>
+            <li>
+                <a href="https://ieteerode.kongu.edu/" class="fab fa-twitter"></a>
+            </li>
+        </ul>
+        <!-- end home-social -->
+
+        <a href="#about" class="home-scroll smoothscroll">
+            <span class="home-scroll__text">Scroll Down</span>
+            <span class="home-scroll__icon"></span>
+        </a>
+        <!-- end home-scroll -->
+    </section>
+    <!-- end s-home -->
+
+    <div class="row" data-aos="fade-up" style="margin-left: 3rem">
+        <div class="col-full">
+            <h1 class="display-1">Why join us?</h1>
+            <p class="lead" style="font-size: large">
+                IETE Student Forum arranges frequent meetings of student members together with experts / academic / R & D / industry leaders as well as IETE centre’s executive committee members. Programmers of common interest may also be arranged involving students forum at many institutions in a city, region etc. Students after completeing their degrees will become proud corporate members of IETE and can write after their name BE. AMIETE, with less fees (deducting the fee paid for the forum).
+            </p>
+        </div>
+    </div>
+    <div class="row" data-aos="fade-up" style="margin-left: 3rem">
+        <div class="col-full">
+            <h1 class="display-1">MEMBERSHIP</h1>
+            <p class="lead" style="font-size: large">
+                The IETE membership is available at different levels based on the applicants' academic qualifications and practical experience in electronics, telecommunications, computers, information technology and related areas. Applicants are invited to seek the highest membership grade they are qualified for. The membership categories are:
+            </p>
+        </div>
+    </div>
+
+
+    <div class="row" data-aos="fade-up" style="margin-left: 3rem">
+        <div class="col-full">
+            <h1 class="display-1" style="font-size: xx-large;">Corporate Members:</h1>
+            <p class="lead" style="font-size: large">
+                1.Honorary fellow (HF) (elected),<br>
+                2.Distinguished Fellow (DF) (elected),<br>
+                3.Fellow (F),<br>
+                4.Member (M),<br>
+                5.Associate member (AM)<br>
+                <h5>Click here to learn more about the Eligibility Criteria and other details</h5><br>
+                <a href="https://iete.org/index111.html">CLICK HERE</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="row" data-aos="fade-up" style="margin-left: 3rem">
+        <div class="col-full">
+            <h1 class="display-1" style="font-size: xx-large;">Non-Corporate Members:</h1>
+            <p class="lead" style="font-size: large">
+                6. Associate (A),<br>
+                7. Organisational Member (ORG),<br>
+                8. AMIETE Student (AMIETE),<br>
+                9. DIPIETE Student (DipIETE),<br>
+                10. Diploma Member (DipIETE Passout) (DIP)<br>
+                <h5>Click here to learn more about the Eligibility Criteria and other details</h5><br>
+                <a href="https://iete.org/index111.html">CLICK HERE</a></p>
+        </div>
+    </div>
+    
+        <div class="row" style="margin-left: 3rem;">
+            <div class="col-five tab-full contact-secondary" data-aos="fade-up">
+                <h3 class="subhead subhead--light">Where To Find Us</h3>
+
+                <p class="contact-address">
+                    IETE Chennai centre,<br />No: 37,<br /> Conran Smith Road Entrance<br />Peters Road,<br />Gopalapuram,Chennai,<br />Tamil Nadu 600086<br />
+                </p>
+            </div>
+            </div>
+            <!-- end contact-secondary -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-full cl-copyright">
+                <span>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | IETE Students' Forum KONGU COLLEGE</span
+          >
+          <span
+            >Design and Developed by :
+            <a href="https:/facebook.com/ranjan17abhishek">SIVA</a> &
+            <a href="https://www.facebook.com/roshanrajput96300"
+              >SUDHARSAN</a> & <a href="#">SAMEER</a>
+            </span
+          >
+        </div>
+      </div>
+
+        <div class="cl-go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
+        </div>
+    </section>
+    <!-- end s-contact -->
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end photoSwipe background -->
+
+    <!-- preloader
+    ================================================== -->
+    <!-- <div id="preloader">
+      <div id="loader">
+        <video autoplay loop>
+          <source src="images/loader.mp4" />
+        </video>
+      </div>
+    </div> -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/graingert-wow/1.2.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script>
+        $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 20,
+            responsiveClass: true,
+            autoplay: true,
+            nav: true,
+            dots: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 2,
+                },
+                1000: {
+                    items: 3,
+                },
+            },
+        });
+    </script>
+    <script>
+        const topNav = document.getElementById('top-navbar');
+        const topLinks = document.getElementById('top-links');
+        const topBar = document.getElementById('top-bar');
+        topBar.addEventListener('click', () => {
+            topNav.classList.toggle('radius');
+            topLinks.classList.toggle('show');
+        })
+    </script>
+</body>
+
+</html>

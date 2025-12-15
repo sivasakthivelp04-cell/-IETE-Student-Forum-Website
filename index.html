@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8" />
+    <title>IETE Student'S Forum, KEC</title>
+    <meta name="description" content="Official page of IETE Students' Forum BIT Sindri, One of the best technical clubs of BIT Sindri and known for organising the Technical mega event of BIT Sindri Tech Udbhav" />
+    <meta name="author" content="Abhishek Ranjan" />
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+        .top-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 98.2%;
+            height: 70px;
+            color: #222;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2em;
+            border-radius: 8px;
+            margin: 1rem;
+            margin-left: .9%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .top-navbar .top-logo img {
+            height: 40px;
+        }
+        
+        .top-navbar .top-logo .text-logo {
+            font-size: 2rem;
+            font-weight: bolder;
+            margin-left: 1rem;
+        }
+        
+        .top-navbar .top-links ul {
+            display: flex;
+        }
+        
+        .top-navbar .top-links ul li {
+            /* position: relative; */
+            list-style: none;
+            width: 60px;
+            height: 60px;
+            z-index: 1;
+        }
+        
+        .top-navbar .top-links ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .top-navbar .top-links ul li a .icon {
+            display: block;
+            line-height: 90px;
+            font-size: 2rem;
+            text-align: center;
+            transition: .5s;
+            color: rgb(19, 5, 93);
+        }
+        
+        .top-navbar .top-links ul li.active a .icon,
+        .top-navbar .top-links ul li:hover a .icon {
+            transform: translateY(30px);
+            color: #fff;
+        }
+        
+        .top-navbar .top-links ul li a .text {
+            position: absolute;
+            top: 20px;
+            transition: .5s;
+            opacity: 0;
+            color: rgb(19, 5, 93);
+            font-size: .85em;
+            font-weight: bold;
+        }
+        
+        .top-navbar .top-links ul li.active a .text,
+        .top-navbar .top-links ul li:hover a .text {
+            opacity: 1;
+        }
+        
+        .top-navbar .top-links ul .indicator {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgb(19, 5, 93);
+            top: 50%;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+        
+        .top-navbar .top-links ul li:nth-child(1):hover~.indicator {
+            transform: translateX(calc(60px * 0));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(2):hover~.indicator {
+            transform: translateX(calc(60px * 1));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(3):hover~.indicator {
+            transform: translateX(calc(60px * 2));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(4):hover~.indicator {
+            transform: translateX(calc(60px * 3));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(5):hover~.indicator {
+            transform: translateX(calc(60px * 4));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(6):hover~.indicator {
+            transform: translateX(calc(60px * 5));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(7):hover~.indicator {
+            transform: translateX(calc(60px * 6));
+        }
+        
+        .top-navbar .top-links ul li:nth-child(8):hover~.indicator {
+            transform: translateX(calc(60px * 7));
+        }
+        
+        .top-navbar .top-bar {
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .top-navbar {
+                box-shadow: none;
+                z-index: 1001;
+            }
+            .top-navbar.radius {
+                border-radius: 8px 8px 0px 0px;
+            }
+            .top-navbar .top-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                border-radius: 0px 0px 8px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                display: none;
+                transition: .5s;
+            }
+            .top-navbar .top-links ul {
+                flex-direction: column;
+            }
+            .top-navbar .top-links ul li {
+                height: 50px;
+            }
+            .top-navbar .top-links ul .indicator {
+                display: none;
+            }
+            .top-navbar .top-links ul li a {
+                flex-direction: row;
+            }
+            .top-navbar .top-links ul li a .icon {
+                line-height: 50px;
+                display: inline;
+            }
+            .top-navbar .top-links ul li a .text {
+                transform: translateY(-8px);
+                left: 70px;
+                opacity: 1;
+            }
+            .top-navbar .top-links ul li.active a .icon,
+            .top-navbar .top-links ul li:hover a .icon {
+                transform: translateY(5px);
+                color: rgb(19, 5, 93);
+            }
+            .top-navbar .top-bar {
+                display: initial;
+            }
+            .top-navbar .top-links.show {
+                display: initial;
+            }
+        }
+        
+        .magnify {
+            transition: 0.1s;
+        }
+        
+        .magnify:hover {
+            transform: scale(1.1);
+            z-index: 2;
+        }
+        
+        .fab {
+            font-size: 30px;
+        }
+        .fab:hover{
+          transform: scale(1.2);
+          z-index: 2;
+        }
+        .fa-facebook:hover {
+            color: #00acee;
+            text-decoration: none;
+        }
+        
+        .fa-twitter:hover {
+            color: #00acee;
+        }
+        
+        .fa-linkedin:hover {
+            color: #00acee;
+        }
+        
+        .fa-youtube:hover {
+            color: red;
+        }
+        
+        .fa-instagram:hover {
+            color: #bc2a8d;
+        }
+        
+        .home-social li a {
+            text-decoration: none;
+        }
+        .home-social-title{
+          font-size: 30px;
+        }
+        .new-box {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        
+        .new-card {
+            position: relative;
+            width: 380px;
+            height: 320px;
+            background: #2b2b2b;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 1rem;
+        }
+        
+        .new-card::before,
+        .new-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+            background: #2b2b2b;
+            transition: .5s;
+            z-index: -1;
+        }
+        
+        .new-card:hover::before {
+            transform: rotate(20deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card:hover::after {
+            transform: rotate(10deg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .new-card .imgbox {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: #222;
+            transition: .5s;
+            z-index: 1;
+        }
+        
+        .new-card .imgbox img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; */
+        }
+        
+        .new-card .detailbox {
+            position: absolute;
+            padding: 10px;
+            top: 45%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        
+        .new-card:hover .imgbox {
+            bottom: 310px;
+            transform: scale(1);
+        }
+        
+        .detailbox .h4 {
+            color: #a1a1a1;
+        }
+        
+        .detailbox p {
+            font-size: 15px;
+            color: white;
+        }
+        
+        @media (max-width: 850px) {
+            .eve-list .new-card {
+                width: 98%;
+            }
+        }
+        
+        @media (max-width: 450px) {
+            .eve-list .new-card {
+                height: 380px;
+            }
+        }
+        .hing h5{
+            font-size: large;
+            color: wheat;
+            margin-top: 6rem;
+            font-size: x-large;
+        }
+    </style>
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <!--     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4798462650321673"
+     crossorigin="anonymous"></script> -->
+    <!-- favicons
+    ================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="iete.ico" type="image/x-icon" />
+    <link rel="icon" href="iete.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+</head>
+
+<body id="top">
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="top-navbar" id="top-navbar">
+            <div class="top-logo">
+                <img src="./img/iete-logo.png" alt="">
+                <div class="text-logo">IETE</div>
+            </div>
+            <div class="top-links" id="top-links">
+                <ul>
+                    <li class="top-link active">
+                        <a href="index.html">
+                            <span class="icon"><i class="fa-solid fa-house-chimney"></i></span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="about.html">
+                            <span class="icon"><i class="fa-solid fa-info"></i></span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="members.html">
+                            <span class="icon"><i class="fa-solid fa-users"></i></span>
+                            <span class="text">Members</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="events.html">
+                            <span class="icon"><i class="fa-solid fa-calendar-days"></i></span>
+                            <span class="text">Events</span>
+                        </a>
+                    </li>
+                    <li class="top-link">
+                        <a href="contact.html">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span class="text">Contact</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+            <div class="top-bar" id="top-bar">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+        </div>
+
+    </header>
+    <!-- end s-header -->
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section" data-parallax="scroll" data-natural-width="3000" data-natural-height="1850" data-position-y="top">
+        <div class="hero-H">
+            <div class="allHAlign">
+                <div class="hero-W">
+                    <div class="hing">
+                        <h1>IETE</h1>
+                    </div>
+                    <div class="hing">
+                        <h5>Learning Today,
+                          Leading Tomorrow</h5>
+                    </div>
+                </div>
+                <div class="heroP">
+                    <img src="images/heroP.png" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+        <!-- end home-content__main -->
+        </div>
+        <!-- end home-content -->
+        <!-- we are inducting
+    ================================================== -->
+
+        <!-- end we are inducting -->
+
+        <ul class="home-sidelinks">
+            <li>
+                <a class="smoothscroll" href="#about">WHO<span>we are</span></a>
+            </li>
+            <li>
+                <a class="smoothscroll" href="#services">WHAT<span>we do</span></a>
+            </li>
+            <li>
+                <a class="smoothscroll" href="#works">LATEST EVENTS<span>stay updated</span></a>
+            </li>
+        </ul>
+        <!-- end home-sidelinks -->
+
+        <ul class="home-social">
+            <li class="home-social-title">Follow Us</li>
+            <li>
+                <a href="https://www.facebook.com/IETECHENNAI/" class="fab fa-facebook"></a>
+
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/iete-newdelhi/?originalSubdomain=in" class="fab fa-linkedin"></a>
+            </li>
+            <li>
+                <a href="https://ieteerode.kongu.edu/" class="fab fa-twitter"></a>
+            </li>
+        </ul>
+        <!-- end home-social -->
+
+        <a href="#about" class="home-scroll smoothscroll">
+            <span class="home-scroll__text">Scroll Down</span>
+            <span class="home-scroll__icon"></span>
+        </a>
+        <!-- end home-scroll -->
+    </section>
+    <!-- end s-home -->
+
+    <!-- about
+    ================================================== -->
+
+    <section id="about" class="s-about">
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Who We Are</h3>
+                <h1 class="display-1">Brief History</h1>
+            </div>
+        </div>
+        <!-- end section-header -->
+
+        <div class="row" data-aos="fade-up">
+            <div class="col-full">
+                <div class="col-half text-center">
+                    <p style="font-size: 20px">
+                        The Institution of Electronics and Telecommunication Engineers (IETE) is a renowned professional society in India focused on advancing electronics, telecommunications, and related fields. Established in 1953, IETE promotes education, research, and industry collaboration. Through publications, events, and certifications, it empowers professionals, academics, and students to excel in these domains.
+                        </p></div>
+                <div class="col-half magnify" style="padding-top: 30px;">
+                    <img src="iimages/erode.jpeg" alt="about-iete" width="80%" />
+                </div>
+            </div>
+            ================================================== -->
+        </div>
+        <!-- end about-desc -->
+    </section>
+   
+    <section id="services" class="s-services light-gray">
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">What We Do</h3>
+                <h1 class="display-1">IETE Chennai center</h1>
+            </div>
+        </div>
+        <!-- end section-header -->
+
+        <div class="row" data-aos="fade-up">
+            <div class="col-full">
+                <p class="lead" style="font-size: large;">
+                    IETE Chennai Center, a prominent chapter of the Institution of Electronics and Telecommunication Engineers (IETE), is actively engaged in fostering technological advancement and knowledge dissemination in the electronics and telecommunications domains. Through a diverse range of initiatives, the center aims to provide valuable opportunities for professionals, researchers, students, and enthusiasts. These initiatives include organizing technical workshops, seminars, and talks, which serve as platforms for individuals to enhance their skills, learn about emerging trends, and exchange ideas. The center also likely hosts conferences that bring together experts to discuss groundbreaking developments in electronics and telecommunications. Education and skill enhancement are key focuses, with the center offering training programs that cater to the evolving needs of the industry. Additionally, IETE Chennai Center may contribute to the growth of aspiring engineers by facilitating student activities such as technical competitions and project exhibitions. By collaborating with local industries, research institutions, and academia, the center plays a vital role in bridging the gap between theoretical knowledge and practical applications. Through publications, certification courses, and community-building initiatives, IETE Chennai Center is a driving force in empowering professionals and students alike in the dynamic fields of electronics and telecommunications. For the most up-to-date information on their current activities, visiting their official channels or directly contacting the center would be advisable.             </p>
+                <ul>
+                    <br>
+                    <li>
+                        We organize Workshops and Seminars on trending topics such as Cyber Security and Ethical Hacking, Internet of Things etc.
+                    </li>
+                    <li>
+                        We also organize webinars on trending topics such as Cyber Security and Ethical Hacking, Internet of Things, Web Development, API's and many more.
+                    </li>
+                    <li>
+                        We organise Tech Udbhav, our Annual Techno-Management Fest. The events under Tech Udbhav are specially choosen and designed for the students so that they can use and enhance their Technical and Managerial skills and win exiciting prizes.
+                    </li>
+                    <li>
+                        Events like Unicorn, Online quizzing and In-house gaming events.
+                    </li>
+                    <li>
+                        Technical events on web development, coding and electronics.
+                    </li>
+                    <li>
+                        We organize small interactive sessions to teach students technical stuffs like Web Development, Arduino and Micro-controllers, Video Editing and many more.
+                    </li>
+                    <li>
+                        To keep the students updated, we regularly post the developments in latest technologies in the very way of Tech Drive.
+                    </li>
+                    <li>
+                        We organize regular GM's to discuss about latest Technical trends and social issues.
+                    </li>
+                    <li>
+                        Regularly post blogs on new technologies on our blog site (<a href="https://blog.ietebits.com/">IETE Blog Site</a>).
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end about-desc -->
+    </section>
+    <!-- end s-services -->
+
+    <!-- works
+    ================================================== -->
+    <section id="works" class="s-works">
+        <div class="row section-header" data-aos="fade-up">
+            <div class="col-full">
+                <h3 class="subhead">Latest Events</h3>
+                <h1 class="display-1"></h1>
+            </div>
+        </div>
+        <!-- end section-header -->
+        <!--  -->
+        <div class="eve-list" data-aos="fade-up">
+            <div class="eve">
+                <div class="new-card" data-aos="fade-up">
+                    <div class="imgbox">
+                        <img src="iimages/resume.jpeg" class="tech-udbhav-events-img">
+                    </div>
+                    <div class="detailbox">
+                        <h3 class="h4">Webinar on "Professional resume writing"</h3>
+                        <p>17th October 2020 (Saturday)
+                            Mr.M.Vigneshwaran (Softskill Trainer/ e-learning developer) gave a guidance session on RESUME building in a Professional manner
+                        </p>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="eve">
+                <div class="new-card" data-aos="fade-up">
+                    <div class="imgbox">
+                        <img src="iimages/cs.jpeg" class="tech-udbhav-events-img">
+                    </div>
+                    <div class="detailbox">
+                        <h3 class="h4">Webinar on "EVOLUTION OF COMPUTING AND SKILL SETS FOR THE FUTURE"</h3>
+                        <p>17/10/2020
+
+                            Mr.MallikMahalingam (CEO,Springpath (CISCO)) commenced with the evolution of hardware and operating software<br>
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="eve">
+                <div class="new-card" data-aos="fade-up">
+                    <div class="imgbox">
+                        <img src="iimages/error.jpeg" class="tech-udbhav-events-img">
+                    </div>
+                    <div class="detailbox">
+                        <h3 class="h4">Webinar on "5G AND IT’S HISTORYs"</h3>
+                        <p>20/09/2020
+
+                            Mr.SunderPalaniraj (Director IC-design, TDKInvenSense) gave a technical talk on communication networks</p>
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="eve">
+                <div class="new-card" data-aos="fade-up">
+                    <div class="imgbox">
+                        <img src="iimages/5g.jpeg" class="tech-udbhav-events-img">
+                    </div>
+                    <div class="detailbox">
+                        <h3 class="h4">Worksop on API 101</h3>
+                        <p>20/09/2020
+
+                            Mr.SunderPalaniraj (Director IC-design, TDKInvenSense) gave a technical talk on communication networks</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+        <!--  -->
+    </section>
+            </div>
+            <!-- end contact-secondary -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <div class="col-full cl-copyright">
+                <span>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | IETE Students' Forum KONGU COLLEGE</span
+          >
+          <span
+            >Design and Developed by :
+            <a href="https://www.linkedin.com/in/sivasakthivel-p-458960224/">SIVA</a> &
+            <a href="https://www.linkedin.com/in/sudharsan-surulirajan-5a429124b/"
+              >SUDHARSAN</a> & <a href="https://www.linkedin.com/in/sameer-hamad-m-aab53824b/">SAMEER</a>
+            </span
+          >
+        </div>
+      </div>
+
+      <div class="cl-go-top">
+        <a class="smoothscroll" title="Back to Top" href="#top"
+          ><i class="icon-arrow-up" aria-hidden="true"></i
+        ></a>
+      </div>
+    </section>
+    <!-- end s-contact -->
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+      <div class="pswp__bg"></div>
+      <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+          <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+          <div class="pswp__top-bar">
+            <div class="pswp__counter"></div>
+            <button
+              class="pswp__button pswp__button--close"
+              title="Close (Esc)"
+            ></button>
+            <button
+              class="pswp__button pswp__button--share"
+              title="Share"
+            ></button>
+            <button
+              class="pswp__button pswp__button--fs"
+              title="Toggle fullscreen"
+            ></button>
+            <button
+              class="pswp__button pswp__button--zoom"
+              title="Zoom in/out"
+            ></button>
+            <div class="pswp__preloader">
+              <div class="pswp__preloader__icn">
+                <div class="pswp__preloader__cut">
+                  <div class="pswp__preloader__donut"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"
+          >
+            <div class="pswp__share-tooltip"></div>
+          </div>
+          <button
+            class="pswp__button pswp__button--arrow--left"
+            title="Previous (arrow left)"
+          ></button>
+          <button
+            class="pswp__button pswp__button--arrow--right"
+            title="Next (arrow right)"
+          ></button>
+          <div class="pswp__caption">
+            <div class="pswp__caption__center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/text.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+    <script>
+      const topNav = document.getElementById('top-navbar');
+      const topLinks = document.getElementById('top-links');
+      const topBar = document.getElementById('top-bar');
+      topBar.addEventListener('click', () => {
+        topNav.classList.toggle('radius');
+        topLinks.classList.toggle('show');
+      })
+    </script>
+
+    <script>
+      anime({
+        targets: '#welcu path',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        delay: function(el, i) { return i * 50 },
+        direction: 'alternate',
+        loop: true,
+      });
+    </script>
+  </body>
+</html>

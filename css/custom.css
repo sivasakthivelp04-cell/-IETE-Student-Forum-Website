@@ -1,0 +1,176 @@
+
+#about-iete {
+  float: right;
+  margin: 0 25px 20px 0;
+}
+.tech-udbhav-img {
+  padding: 2rem 12rem 10rem 12rem;
+}
+.tech-udbhav-events-img {
+  padding-bottom: 1.5rem;
+}
+.form-control {
+  background-color: #fff;
+}
+#form-message {
+  font-size: 14px;
+}
+#form-button {
+  background-color: #2eb588;
+  color: white;
+  border-radius: 8px;
+}
+#form-button:hover {
+  background-color: #5a5f88;
+}
+.col-half {
+  width: 50%;
+}
+
+.col-quat {
+  width: 33.333%;
+}
+.col-half h2,
+h3 {
+  font-family: sans-serif;
+}
+text-center {
+  text-align: center;
+}
+.image {
+  padding: 50px 50px 0 50px;
+  margin: 10px;
+}
+.image img {
+  border-radius: 50%;
+  border: 4px solid #454545;
+}
+.members-row {
+  margin: 0;
+  width: 100%;
+  max-width: 2000px;
+  padding: 10px 0 30px 0;
+}
+.profile h3 {
+  margin-top: 1.2rem !important;
+  font-size: 22px;
+}
+.profile p a .fab {
+  font-size: 20px;
+}
+.circle h4 {
+  font-size: 20px;
+  color: darkslategrey;
+  font-family: "metropolis-light", sans-serif;
+}
+.members-row > div {
+  padding-bottom: 20px;
+}
+.members-card {
+  height: 345px;
+  margin: 10px;
+  border: 2px solid #087876;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 280px;
+  /* min-width: 240px; */
+}
+.members-card img {
+  /* height: 322px; */
+  border-bottom: 1px solid grey;
+  border-radius: 10px;
+}
+.members-card h3 {
+  margin-top: 10px;
+}
+.owl-nav {
+  margin: 0;
+  padding-bottom: 20px;
+}
+.owl-nav span {
+  font-size: 40px;
+  padding: 12px;
+}
+.owl-dots {
+  display: none;
+}
+.members-col {
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1350px) {
+  .col-quat{
+    width: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .tech-udbhav-img {
+    padding: 1rem 2rem 7rem 2rem;
+  }
+  .col-half iframe {
+    width: 100%;
+    height: 300px;
+  }
+  .owl-theme {
+    margin-left: 10%;
+  }
+  .owl-nav {
+    margin-left: -15%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  #particle-js {
+    display: none;
+  }
+  .home-content {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .col-half {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .col-quat{
+    width: 100%;
+  }
+}
+
+/*  <!---- Alumni Section ----->
+*/
+.dark {
+  background-color: #111111;
+}
+.alumni-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: #e1ecff;
+  margin: 20px auto;
+}
+.alumni-card-img img {
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+}
+.alumni-card-img {
+  margin: 20px;
+}
+.alumni-card-img img:hover {
+  transform: scale(1.05);
+  border: 4px solid #86b7b9;
+  transition: all 0.5s ease-in-out;
+}
+.alumni-card-info h3 {
+  font-size: 20px;
+}
+.alumni-card-info p {
+  font-size: 15.5px;
+}
+.alumni-card-info i {
+  font-size: 22px;
+  color: #555c67;
+}
